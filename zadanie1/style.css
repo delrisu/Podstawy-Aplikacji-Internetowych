@@ -24,11 +24,11 @@ td img:hover {
   letter-spacing: 5px;
 }
 
-td p {
+td[colspan="2"] p {
   font-size: small;
 }
 
-p:nth-child(even) {
+p+p {
   color: gray;
 }
 
