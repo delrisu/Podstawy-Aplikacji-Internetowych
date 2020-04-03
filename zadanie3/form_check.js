@@ -1,36 +1,43 @@
 function validate(formularz) {
-  return (
-    checkStringAndFocus(
-      formularz.elements["f_imie"],
-      "Podaj imię!",
-      isWhiteSpaceOrEmpty
-    ) &&
+  ret = checkStringAndFocus(
+    formularz.elements["f_imie"],
+    "Podaj imię!",
+    isWhiteSpaceOrEmpty
+  );
+  ret =
     checkStringAndFocus(
       formularz.elements["f_nazwisko"],
       "Podaj nazwisko!",
       isWhiteSpaceOrEmpty
-    ) &&
+    ) && ret;
+
+  ret =
     checkStringAndFocus(
       formularz.elements["f_kod"],
       "Podaj kod!",
       isWhiteSpaceOrEmpty
-    ) &&
+    ) && ret;
+  ret =
     checkStringAndFocus(
       formularz.elements["f_ulica"],
       "Podaj ulicę!",
       isWhiteSpaceOrEmpty
-    ) &&
+    ) && ret;
+  ret =
     checkStringAndFocus(
       formularz.elements["f_miasto"],
       "Podaj miasto!",
       isWhiteSpaceOrEmpty
-    ) &&
+    ) && ret;
+
+  ret =
     checkStringAndFocus(
       formularz.elements["f_email"],
       "Podaj właściwy email!",
       isEmailInvalid
-    )
-  );
+    ) && ret;
+
+  return ret;
 }
 
 function isWhiteSpaceOrEmpty(str) {
