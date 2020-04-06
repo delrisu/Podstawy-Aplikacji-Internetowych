@@ -8,17 +8,25 @@
       src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
     ></script>
     <script type="text/javascript">
+      $(document).ready(function () {
+        $("button").bind("asdf", function () {
+          alert("Asdf!");
+        });
+        $("*").unbind();
+      });
+
       function edit() {
         var row = $(this);
         row.html('<input id="edit" value="' + row.text() + '">');
         $("#edit")
-          .blur(function() {
+          .blur(function () {
             row.text($(this).val());
             row.one("click", edit);
           })
           .focus();
+        $("button").trigger("asdf");
       }
-      $(function() {
+      $(function () {
         $("td").one("click", edit);
       });
     </script>
@@ -38,5 +46,6 @@
         <td>...</td>
       </tr>
     </table>
+    <button>klyk</button>
   </body>
 </html>
