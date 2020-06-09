@@ -1,6 +1,6 @@
 ﻿@{ 
     var name = "Robert Paulson";
-    if (Request["name"]!= null)
+    if (Request["name"]!= null && !Request["name"].IsEmpty())
     {
         name = Request["name"];
     }
